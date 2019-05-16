@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CeConfig>
+  <!--应用程序配置-->
+  <Apps>
+    <App name="editplus" multi="false" runTime="196">O:\Software\EditPlus\EditPlus.exe</App>
+    <App name="notepad" multi="false" runTime="4">%windir%\System32\notepad.exe</App>
+    <App name="software" multi="false" runTime="4">O:\Software</App>
+  </Apps>
+  <!--程序运行配置相关-->
+  <AppConfig>
+    <!--当找不指定的程序时弹出功能框-->
+    <WhenNotFoundShowTip>True</WhenNotFoundShowTip>
+    <!--找不程序时推荐的相似程度-->
+    <FindAppSimilarityPercent>0.7</FindAppSimilarityPercent>
+    <!--打开快捷启动界面的快捷键 默认为LWin + Q -->
+    <Shortcutkey>Q</Shortcutkey>
+    <!--是否自动检查更新-->
+    <CheckUpdate>True</CheckUpdate>
+  </AppConfig>
+</CeConfig>

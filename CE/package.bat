@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe" /ndebug /target:winexe /out:SomeFinalProg.exe CE.exe AutoUpdater.NET.dll zh-CN\AutoUpdater.NET.resources.dll /log:AandB4.log

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ApplicationIcon>9.ico</ApplicationIcon>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{294DA475-225A-4B03-85A3-9DE2698236EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CE</RootNamespace>
+    <AssemblyName>CE</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>http://localhost/CE/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AutoupdaterdotNet.1.3.1\lib\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AddMultiApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMultiApp.Designer.cs">
+      <DependentUpon>AddMultiApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSingleApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSingleApp.Designer.cs">
+      <DependentUpon>AddSingleApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AutoTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoTip.Designer.cs">
+      <DependentUpon>AutoTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CeXmlConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CeXmlConfig.Designer.cs">
+      <DependentUpon>CeXmlConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowAppTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowAppTip.Designer.cs">
+      <DependentUpon>ShowAppTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateLogPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateLogPlan.Designer.cs">
+      <DependentUpon>UpdateLogPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CheckUpdateHelper.cs" />
+    <Compile Include="Helper\EcanSystem.cs" />
+    <Compile Include="Helper\ExecuteHelper.cs" />
+    <Compile Include="Helper\FormsHelper.cs" />
+    <Compile Include="Helper\Hotkey.cs" />
+    <Compile Include="Helper\LevenshteinDistance.cs" />
+    <Compile Include="Helper\SysEnvironment.cs" />
+    <Compile Include="Helper\ToolBarHelper.cs" />
+    <Compile Include="Model\App.cs" />
+    <Compile Include="Model\CeConfig.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\XmlConfigHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="9.ico" />
+    <Content Include="CeAppConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Forms\UpdateLogPlan.resx">
+      <DependentUpon>UpdateLogPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\UpdateLog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AddMultiApp.resx">
+      <DependentUpon>AddMultiApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSingleApp.resx">
+      <DependentUpon>AddSingleApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoTip.resx">
+      <DependentUpon>AutoTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CeXmlConfig.resx">
+      <DependentUpon>CeXmlConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowAppTip.resx">
+      <DependentUpon>ShowAppTip.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="package.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
