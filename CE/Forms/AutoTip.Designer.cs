@@ -37,7 +37,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
@@ -84,37 +83,28 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem2,
             this.UpdateLogToolStripMenuItem,
-            this.CheckUpdate,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // ToolStripMenuItem2
             // 
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            this.ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem2.Text = "设置";
             this.ToolStripMenuItem2.Click += new System.EventHandler(this.ToolStripMenuItem2_Click);
             // 
             // UpdateLogToolStripMenuItem
             // 
             this.UpdateLogToolStripMenuItem.Name = "UpdateLogToolStripMenuItem";
-            this.UpdateLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.UpdateLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.UpdateLogToolStripMenuItem.Text = "更新日志";
             this.UpdateLogToolStripMenuItem.Click += new System.EventHandler(this.UpdateLogToolStripMenuItem_Click);
-            // 
-            // CheckUpdate
-            // 
-            this.CheckUpdate.Name = "CheckUpdate";
-            this.CheckUpdate.Size = new System.Drawing.Size(152, 22);
-            this.CheckUpdate.Text = "检查更新";
-            this.CheckUpdate.Visible = false;
-            this.CheckUpdate.Click += new System.EventHandler(this.CheckUpdate_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "完全退出";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -165,6 +155,5 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem UpdateLogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CheckUpdate;
     }
 }

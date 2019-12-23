@@ -68,7 +68,11 @@ namespace CE.Helper
                     ProgramPath = ProgramPath.Replace(Match.Groups[0].Value, varPath); ;
                 }
 
-                if (File.Exists(ProgramPath) || Directory.Exists(ProgramPath))
+                if (app.isNetWorkPath)
+                {
+                    Process.Start(app.path);
+                }
+                else if (File.Exists(ProgramPath) || Directory.Exists(ProgramPath))
                 {
                     if (IsOpenDir && File.Exists(ProgramPath))
                         ProgramPath = "/select," + ProgramPath;

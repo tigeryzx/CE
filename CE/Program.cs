@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using CE.Forms;
 using CE.Helper;
 using CE.Model;
-using AutoUpdaterDotNET;
 using System.Globalization;
 
 namespace CE
@@ -38,8 +37,8 @@ namespace CE
                 if (mutex.WaitOne(0, false))
                 {
                     //检查更新
-                    if(Config.GetCeConfig().CheckUpdate)
-                        CheckUpdateHelper.GetInstance().CheckUpdate();
+                    //if(Config.GetCeConfig().CheckUpdate)
+                    //    CheckUpdateHelper.GetInstance().CheckUpdate();
 
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);

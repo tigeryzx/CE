@@ -9,6 +9,8 @@ namespace CE.Model
     {
         public string name { get; set; }
 
+        public bool isNetWorkPath { get; set; }
+
         private bool _multi;
         public bool multi {
             get

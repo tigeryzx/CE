@@ -218,7 +218,8 @@ namespace CE.Helper
                        name = AppName,
                        multi = Convert.ToBoolean(i.Attribute("multi").Value ?? "false"),
                        runTime = Convert.ToInt32(i.Attribute("runTime").Value ?? "0"),
-                       path = i.Value
+                       path = i.Value,
+                       isNetWorkPath = i.Attribute("isNetWorkPath") == null ? false : Convert.ToBoolean(i.Attribute("isNetWorkPath").Value),
                    }).SingleOrDefault();
 
             //如果有子节点
@@ -288,7 +289,8 @@ namespace CE.Helper
                     var x = new XElement("App",
                         new XAttribute("name", app.name),
                         new XAttribute("multi", app.multi),
-                        new XAttribute("runTime", app.runTime)
+                        new XAttribute("runTime", app.runTime),
+                        new XAttribute("isNetWorkPath", app.isNetWorkPath)
                         );
 
                     //是否是多项启动
@@ -497,6 +499,9 @@ namespace CE.Helper
             foreach (var app in SingleAppList)
             {
                 string path = app.path;
+                if (app.isNetWorkPath)
+                    continue;
+
                 if (!File.Exists(path) && !Directory.Exists(path))
                 {
                     deleAppList.Add(app);

@@ -95,6 +95,7 @@ namespace CE.Forms
                 App app = new App();
                 app.name = txtName.Text;
                 app.path = txtPath.Text;
+                app.isNetWorkPath = this.isNetWorkPath(app.path);
                 Config.SaveApp(app);
 
                 //是否保存后运行
@@ -110,6 +111,14 @@ namespace CE.Forms
         #endregion
 
         #region 验证信息
+
+        private bool isNetWorkPath(string path)
+        {
+            string checkPath = path.ToLower();
+            string[] networkPath = new string[] { "\\\\", "ftp://", "http://", "https://" };
+            var isnetWorkPath = networkPath.Any(x => checkPath.StartsWith(x));
+            return isnetWorkPath;
+        }
 
         /// <summary>
         /// 验证信息
@@ -131,16 +140,12 @@ namespace CE.Forms
                 MessageText = "路径不能为空!";
                 Result = false;
             }
-            if (!File.Exists(path) && !Directory.Exists(path))
+
+            if (!this.isNetWorkPath(path) && !File.Exists(path) && !Directory.Exists(path))
             {
                 MessageText = "路径指定的文件或目录不存在!";
                 Result = false;
             }
-            //if (Config.IsExistsApp(name))
-            //{
-            //    MessageText = string.Format("你指定的名称[{0}]己存在配置中，请重新指定!", name);
-            //    Result = false;
-            //}
 
             if (!Result)
                 MessageBox.Show(MessageText, "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

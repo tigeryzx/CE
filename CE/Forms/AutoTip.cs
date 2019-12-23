@@ -248,7 +248,7 @@ namespace CE.Forms
         /// <param name="e"></param>
         private void CheckUpdate_Click(object sender, EventArgs e)
         {
-            CheckUpdateHelper.GetInstance().CheckUpdate();
+            // CheckUpdateHelper.GetInstance().CheckUpdate();
         } 
         #endregion
 
